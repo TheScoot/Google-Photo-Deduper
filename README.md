@@ -14,6 +14,10 @@ You must select the setting in Google Drive to "Automaticlly put your Google Pho
 If a file has a created date even a second off it will not be considered a duplicate.
 PNGs are not working for some reason.  Feel free to try and fix, I tried a bunch of things, it just doesn't return them.
 
+You need to create a client_secret by following Step 1 of the instructions located here: 
+https://developers.google.com/drive/v3/web/quickstart/python
+Save file as 'client_secret.json' in same directory as photodeduper.py
+
 The reason I wrote this, is the iOS Google Photos App keeps creating duplicate photos if I edit any of them with the 
 iOS Photos app since the checksum will no longer be the same and it thinks it is a new photo.
 
