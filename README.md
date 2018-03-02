@@ -18,6 +18,15 @@ You need to create a client_secret by following Step 1 of the instructions locat
 https://developers.google.com/drive/v3/web/quickstart/python
 Save file as 'client_secret.json' in same directory as photodeduper.py
 
+If you do not have httplib2 installed then use:
+pip install httplib2
+
+To get the Google API client use:
+pip install --upgrade google-api-python-client
+
+If the Package six is giving you an exception, install the latest version by doing:
+sudo pip install --ignore-installed six
+
 The reason I wrote this, is the iOS Google Photos App keeps creating duplicate photos if I edit any of them with the 
 iOS Photos app since the checksum will no longer be the same and it thinks it is a new photo.
 
