@@ -82,9 +82,9 @@ def main():
     uniques = {}
     total_files = 0
 
-    query = "mimeType='image/jpeg'"
-    #query = "name='IMG_0015.HEIC'"
-    DEBUG = False
+    query = "mimeType='image/jpeg' or mimeType='image/heif'"
+    #query = "name='IMG_3547.HEIC'"
+    DEBUG = True
 
     page_token = None
     while True:
@@ -103,7 +103,7 @@ def main():
                 total_files += len(items)
                 print('Files: ', total_files)
                 for item in items:
-                    if DEBUG: pp.pprint(item)
+                    if DEBUG and item['name'] == 'IMG_3547.HEIC': pp.pprint(item)
                     if (item['name'], item['createdTime']) not in dupes:
                         dupes[(item['name'], item['createdTime'])] = {}
                     dupes[(item['name'], item['createdTime'])][item['id']] = item
@@ -120,7 +120,7 @@ def main():
     total = 0
     #if DEBUG: pp.pprint(dupes)
     for dupe in dupes:
-        if DEBUG: pp.pprint(dupe)
+        #if DEBUG: pp.pprint(dupe)
         if len(dupes[dupe]) > 1:
             #if DEBUG: pp.pprint(dupes[dupe])
             total = total + len(dupes[dupe])
