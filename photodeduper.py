@@ -84,7 +84,7 @@ def main():
 
     query = "mimeType='image/jpeg' or mimeType='image/heif'"
     #query = "name='IMG_3547.HEIC'"
-    DEBUG = True
+    DEBUG = False
 
     page_token = None
     while True:
